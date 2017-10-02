@@ -2,34 +2,31 @@ package calculator;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
 import acm.graphics.*;
 
 public class Field extends JFrame{
 	
-	static Field f = new Field();
+	private static Field f = new Field();
 	
-	static GCanvas c = new GCanvas();
+	private static GCanvas c = new GCanvas();
 	
-	static JLabel lbl = new JLabel(), xt = new JLabel("< x <"), yt = new JLabel("< y <");
+	private static JLabel lbl = new JLabel(), xt = new JLabel("< x <"), yt = new JLabel("< y <");
 	
-	static JTextField txt = new JTextField(), val = new JTextField(), xt1 = new JTextField(), xt2 = new JTextField(), yt1 = new JTextField(), yt2 = new JTextField();
+	private static JTextField txt = new JTextField(), val = new JTextField(), xt1 = new JTextField(), xt2 = new JTextField(), yt1 = new JTextField(), yt2 = new JTextField();
 	
-	static String t, v;
+	private static String t, v;
 	
-	static GRect paper = new GRect(0, 0, 399, 400), bar = new GRect(0, 400, 400, 50);
+	private static GRect paper = new GRect(0, 0, 399, 400), bar = new GRect(0, 400, 400, 50);
 	
-	static JButton clear = new JButton("REL"), refresh = new JButton("GPH");
+	private static JButton clear = new JButton("REL"), refresh = new JButton("GPH");
 	
-	static GLine x_axis = new GLine(0, 200, 399, 200), y_axis = new GLine(200, 0, 200, 399);
+	private static GLine x_axis = new GLine(0, 200, 399, 200), y_axis = new GLine(200, 0, 200, 399);
 	
-	static double low_x = -6, high_x = 6, low_y = -6, high_y = 6;
-	
-	static ArrayList<GLine> func = new ArrayList<GLine>();
+	private static double low_x = -6, high_x = 6, low_y = -6, high_y = 6;
 	
 	//For initializing the calculator.
-	static void init(){
+	private static void init(){
 		
 		//Initializing an object of Field. Note that it is extended to JFrame so following operations are valid.
 		f.setVisible(true);
@@ -124,7 +121,7 @@ public class Field extends JFrame{
 	}
 	
 	//Reloading the components in calculator.
-	public static void reload(){
+	private static void reload(){
 		f.add(c);
 		c.add(xt);
 		c.add(yt);
@@ -159,10 +156,10 @@ public class Field extends JFrame{
 	}
 	
 	//Add a text-field to canvas.
-		private static void add(JTextField txt, int a, int b, int w, int h){
-			txt.setBounds(a, b, w, h);
-			c.add(txt);
-		}
+	private static void add(JTextField txt, int a, int b, int w, int h){
+		txt.setBounds(a, b, w, h);
+		c.add(txt);
+	}
 	
 	//Sets the location of X and Y axis.
 	private static void set_XY(){

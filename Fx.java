@@ -188,14 +188,14 @@ public class Fx {
 	}
 	
 	//Check if a string is an operator.
-	public static boolean isOperator(String s){
+	private static boolean isOperator(String s){
 		if(s.equals("+")||s.equals("-")||s.equals("*")||s.equals("/")||s.equals("^"))
 			return true;
 		return false;
 	}
 	
 	//Rounds a double type data to certain digits after decimal point.
-	public static double round(double n, int digit){
+	private static double round(double n, int digit){
 		return Math.round(n*Math.pow(10, digit))/Math.pow(10, digit);
 	}
 	/*
